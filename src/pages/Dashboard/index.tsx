@@ -1,60 +1,66 @@
-import React from 'react';
+import React, { useState, FormEvent } from 'react';
 import { FaChevronRight } from 'react-icons/fa';
+import api from '../../services/api';
 
 import logoImg from '../../assets/logo.svg';
 
 import { Title, Form, Repositories } from './styles';
 
+interface Repository {
+  full_name: string;
+  description: string;
+  owner: {
+    login: string;
+    avatar_url: string;
+  };
+}
+
 const Dashboard: React.FC = () => {
+  const [newRepo, setNewRepo] = useState('');
+  const [repositories, setRepositories] = useState<Repository[]>([]);
+
+  async function handleAddRepository(
+    e: FormEvent<HTMLFormElement>,
+  ): Promise<void> {
+    e.preventDefault();
+
+    const response = await api.get<Repository>(`repos/${newRepo}`);
+
+    const repository = response.data;
+
+    setRepositories([...repositories, repository]);
+    setNewRepo('');
+  }
+
   return (
     <>
       <img src={logoImg} alt="Github Explorer" />
       <Title>Explore respositórios no Github</Title>
 
-      <Form>
-        <input placeholder="Digite o nome do repositório" />
+      <Form onSubmit={handleAddRepository}>
+        <input
+          value={newRepo}
+          onChange={e => setNewRepo(e.target.value)}
+          placeholder="Digite o nome do repositório"
+        />
         <button type="submit">Pesquisar</button>
       </Form>
 
       <Repositories>
-        <a href="teste">
-          <img
-            src="https://avatars3.githubusercontent.com/u/14797491?s=460&u=d36d126cdc234188618c5d8e1c63e4448d0a7be7&v=4"
-            alt="Wesley Hiromitsu"
-          />
-          <div>
-            <strong>rocketseat/unform</strong>
-            <p>Descrição do repositorio muito massa em</p>
-          </div>
+        {repositories.map(repository => (
+          <a key={repository.full_name} href="teste">
+            <img
+              src={repository.owner.avatar_url}
+              alt={repository.owner.login}
+            />
+            <div>
+              <strong>{repository.full_name}</strong>
+              <p>{repository.description}</p>
+            </div>
 
-          <FaChevronRight size={14} />
-        </a>
-
-        <a href="teste">
-          <img
-            src="https://avatars3.githubusercontent.com/u/14797491?s=460&u=d36d126cdc234188618c5d8e1c63e4448d0a7be7&v=4"
-            alt="Wesley Hiromitsu"
-          />
-          <div>
-            <strong>rocketseat/unform</strong>
-            <p>Descrição do repositorio muito massa em</p>
-          </div>
-
-          <FaChevronRight size={14} />
-        </a>
-
-        <a href="teste">
-          <img
-            src="https://avatars3.githubusercontent.com/u/14797491?s=460&u=d36d126cdc234188618c5d8e1c63e4448d0a7be7&v=4"
-            alt="Wesley Hiromitsu"
-          />
-          <div>
-            <strong>rocketseat/unform</strong>
-            <p>Descrição do repositorio muito massa em</p>
-          </div>
-
-          <FaChevronRight size={14} />
-        </a>
+            <FaChevronRight size={14} />
+          </a>
+        ))}
       </Repositories>
     </>
   );
