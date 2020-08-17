@@ -1,44 +1,92 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+   <img src=".github/logo.svg" alt="Github_explorer" width="280"/>
+</p>
 
-## Available Scripts
+<p align="center">
+   <a href="https://www.linkedin.com/in/wesley-hiromitsu-14b52914a/">
+      <img alt="Wesley Hiromitsu" src="https://img.shields.io/badge/-WesleyHiromitsu-2c2c2c?style=flat&logo=Linkedin&logoColor=white" />
+   </a>
 
-In the project directory, you can run:
+   <a href="mailto:hiromitsu.dev@gmail.com">
+      <img alt="Wesley Hiromitsu" src="https://img.shields.io/badge/-hiromitsu.dev@gmail.com-2c2c2c?style=flat-square&logo=Gmail&logoColor=white" />
+   </a>
 
-### `yarn start`
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/WesleyHiromitsu/github-explorer?color=2c2c2c">
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+  <img alt="License" src="https://img.shields.io/badge/license-MIT-2c2c2c">
+</p>
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+<div align="center">
+   Github_explorer, GoStack.
+</div>
 
-### `yarn test`
+<p align="center">
+  <img alt="mockup" src=".github/git-explorer.png" width="100%">
+</p>
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<p align="center">
+  <a href="#clipboard-sobre-o-projeto">Sobre o Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#art-layout">Layout</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#computer-tecnologias-utilizadas">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#rocket-como-rodar-o-projeto">Como rodar o projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#closed-book-licença">Licença</a>
+</p>
 
-### `yarn build`
+## :clipboard: Sobre o Projeto
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Github-explorer, projeto de estudo feito para manipular dados da api do github.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## :art: Layout
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Você pode duplicar o layout do projeto no Figma.
 
-### `yarn eject`
+- <div style="display:flex;align-items:center;">
+      Layout do projeto <a href="https://www.figma.com/file/HOCmxfrElzLpI75LdzFLia/Github-Explorer/duplicate"> <img src="https://img.shields.io/badge/-Figma-2c2c2c?&logo=Figma&logoColor=white&link" style="margin-left:8px;"/> </a>
+  </div>
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## :computer: Tecnologias utilizadas
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+O projeto foi desenvolvido utilizando as seguintes tecnologias:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- ReactJS
+- TypeScript
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## :rocket: Como rodar o projeto
 
-## Learn More
+Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- [Git](https://git-scm.com);
+- [Node.js](https://nodejs.org/en/);
+- [Editor de código](https://code.visualstudio.com/)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Clonando o projeto
+
+Comece realizando um clone deste projeto.
+
+```bash
+# Clone este repositório
+$ git clone https://github.com/WesleyHiromitsu/github-explorer
+```
+
+### Rodando a aplicação
+
+```bash
+# Acesse a pasta do projeto no seu terminal/cmd
+$ cd github-explorer
+
+# Instale as dependências
+$ yarn
+# Ou use NPM se preferir
+$ npm install
+
+# Execute a aplicação
+$ yarn start
+# Ou use NPM se preferir
+$ npm run start
+
+# A aplicação será aberta na porta:3000 - acesse http://localhost:3000
+```
+
+## :closed_book: Licença
+
+Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](https://github.com/WesleyHiromitsu/github-explorer/blob/master/LICENSE) para mais detalhes.
